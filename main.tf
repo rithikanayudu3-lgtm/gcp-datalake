@@ -67,3 +67,10 @@ resource "google_service_account" "etl_runner" {
   account_id   = "etl-runner-${var.environment}"
   display_name = "ETL runner (${var.environment})"
 }
+
+module "sandbox_bucket" {
+  source      = "./modules/data_bucket"
+  bucket_name="${var.project_id}-${var.environment}-sandbox"
+  location    = var.region
+  environment = var.environment
+}
