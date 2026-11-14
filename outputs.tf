@@ -32,3 +32,8 @@ output "service_account_email" {
   description = "Email of the ETL runner service account"
   value       = google_service_account.etl_runner.email
 }
+
+output "sandbox_bucket_name" {
+  description = "Name of the sandbox bucket"
+  value       = module.sandbox_bucket.name
+}
