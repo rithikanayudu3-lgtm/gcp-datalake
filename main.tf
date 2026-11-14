@@ -70,7 +70,7 @@ resource "google_service_account" "etl_runner" {
 
 module "sandbox_bucket" {
   source      = "./modules/data_bucket"
-  bucket_name = "${var.project_id}-${var.environment}-sandbox"
+  bucket_name="${var.project_id}-${var.environment}-sandbox"
   location    = var.region
   environment = var.environment
 }
